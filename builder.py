@@ -423,9 +423,9 @@ class KeyboardCase(object):
             if 'holes' in self.case and self.case['holes'] >= 4 and 'x_holes' in self.case and 'y_holes' in self.case:
                 self.layout_sandwich_holes()
                 radius = self.case['hole_diameter']/2 - self.kerf
-                x_gap = (self.width - 2*self.case['hole_diameter'] + 1)/(self.case['x_holes'] + 1)
-                y_gap = (self.height - 2*self.case['hole_diameter'] + 1)/(self.case['y_holes'] + 1)
-                hole_distance = self.case['hole_diameter'] - .5 - self.kerf
+                x_gap = (self.width - 2*self.case['hole_diameter'])/(self.case['x_holes'] + 1)
+                y_gap = (self.height - 2*self.case['hole_diameter'])/(self.case['y_holes'] + 1)
+                hole_distance = self.case['hole_diameter'] - self.kerf
                 plate = plate.center(hole_distance, hole_distance)
                 for i in range(self.case['x_holes'] + 1):
                     plate = plate.center(x_gap,0).circle(radius)
